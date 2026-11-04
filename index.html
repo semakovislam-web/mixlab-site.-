@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Интерактивное моделирование и оптимизация процесса смешивания лакокрасочных материалов.">
+  <title>MixLab — моделирование смешивания ЛКМ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="page-glow"></div>
+  <header class="topbar">
+    <a class="brand" href="#home"><span class="brand-mark">M</span><span>mix<span class="brand-light">lab</span></span></a>
+    <nav id="nav">
+      <a href="#theory">Теория</a><a href="#model">Модель</a><a href="#simulator">Расчёт</a><a href="#optimization">Оптимизация</a><a href="#results">Результаты</a>
+    </nav>
+    <a class="top-cta" href="#simulator">Открыть лабораторию <span>↗</span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Открыть меню">☰</button>
+  </header>
+
+  <main>
+    <section class="hero section" id="home">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="pulse"></span> ЛАБОРАТОРНАЯ РАБОТА № 2</div>
+        <h1>Смешивание.<br><em>Точно рассчитанное.</em></h1>
+        <p class="hero-lead">Интерактивная модель приготовления лакокрасочных материалов: от исходных компонентов до выбора рационального режима работы смесителя.</p>
+        <div class="hero-actions"><a class="btn btn-primary" href="#simulator">Запустить моделирование <span>→</span></a><a class="text-link" href="#theory">Изучить модель <span>↓</span></a></div>
+        <div class="hero-meta"><div><strong>6</strong><span>разделов проекта</span></div><div><strong>5+</strong><span>вычислительных опытов</span></div><div><strong>100–500</strong><span>об/мин, диапазон</span></div></div>
+      </div>
+      <div class="hero-visual">
+        <div class="visual-label label-top">PROCESS / 01</div>
+        <div class="tank-wrap">
+          <div class="tank-top"></div><div class="tank">
+            <div class="shaft"></div><div class="blade blade-a"></div><div class="blade blade-b"></div>
+            <div class="liquid"><i></i><i></i><i></i><span class="bubble b1"></span><span class="bubble b2"></span><span class="bubble b3"></span></div>
+            <div class="tank-gloss"></div>
+          </div><div class="tank-base"></div>
+          <div class="input-pipe pipe-one"><span>Смола G₁</span></div><div class="input-pipe pipe-two"><span>Растворитель G₂</span></div>
+          <div class="output-pipe"><span>Готовый ЛКМ</span></div>
+          <div class="motor"><span>М</span></div>
+        </div>
+        <div class="visual-label label-bottom">MIXING UNIT · DIGITAL MODEL</div>
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+      </div>
+    </section>
+
+    <section class="section intro-strip">
+      <div class="strip-index">01 / ЗАДАЧА</div>
+      <p>Исследовать, как <b>скорость вращения</b> и <b>время смешивания</b> влияют на качество готовой смеси, и подобрать режим с минимальными условными энергозатратами.</p>
+      <div class="strip-tag">HTML · CSS · JAVASCRIPT</div>
+    </section>
+
+    <section class="section content-section" id="theory">
+      <div class="section-heading"><div><div class="eyebrow">02 / ТЕОРЕТИЧЕСКАЯ ЧАСТЬ</div><h2>Что происходит <em>внутри смесителя?</em></h2></div><p>В производстве ЛКМ смесительные агрегаты обеспечивают равномерное распределение компонентов и получение материала с заданной концентрацией.</p></div>
+      <div class="theory-grid">
+        <article class="info-card large-card"><div class="card-kicker">ПРИНЦИП ПРОЦЕССА</div><h3>Два потока — один состав</h3><p>В смесительный узел поступают смола с концентрацией растворителя C₁ и растворитель с концентрацией C₂. После смешивания формируется готовый материал объёмом G.</p>
+          <div class="flow-diagram"><div class="flow-node"><span class="node-dot resin"></span><b>Смола</b><small>G₁ · C₁</small></div><div class="flow-arrow">＋</div><div class="flow-node"><span class="node-dot solvent"></span><b>Растворитель</b><small>G₂ · C₂</small></div><div class="flow-arrow">→</div><div class="flow-node result-node"><span class="node-dot result"></span><b>Готовый ЛКМ</b><small>G · C(t)</small></div></div>
+        </article>
+        <article class="info-card"><div class="card-kicker">ЗАКОН СОХРАНЕНИЯ</div><div class="big-symbol">∑</div><h3>Баланс вещества</h3><p>Динамическая модель строится на равенстве: приход вещества равен его убыли плюс приращение в смесителе.</p><div class="mini-formula">Приход = Убыль + Приращение</div></article>
+        <article class="info-card"><div class="card-kicker">КЛЮЧЕВЫЕ ПАРАМЕТРЫ</div><h3>Что влияет на результат</h3><ul class="clean-list"><li><span>G₁, G₂</span> — расходы компонентов</li><li><span>C₁, C₂</span> — входные концентрации</li><li><span>V</span> — рабочий объём</li><li><span>n</span> — скорость мешалки</li><li><span>t</span> — продолжительность процесса</li></ul></article>
+      </div>
+    </section>
+
+    <section class="section model-section" id="model">
+      <div class="section-heading"><div><div class="eyebrow">03 / МАТЕМАТИЧЕСКАЯ МОДЕЛЬ</div><h2>От материального баланса <em>к формуле</em></h2></div><p>В основе расчёта — дифференциальное уравнение из методических указаний к лабораторной работе.</p></div>
+      <div class="equation-panel">
+        <div class="equation-main"><span class="eq-label">УРАВНЕНИЕ ПРОЦЕССА · (1.16)</span><div class="equation">T · <span class="frac"><i>dC</i><b>dt</b></span> + C = P<sub>i</sub></div><p>Постоянная времени определяет скорость выхода концентрации на установившееся значение.</p></div>
+        <div class="equation-side"><div class="eq-label">ПАРАМЕТРЫ МОДЕЛИ</div><div class="param-line"><b>Pᵢ</b><span>(G₁C₁ + G₂C₂) / (G₁ + G₂)</span></div><div class="param-line"><b>T</b><span>V / G</span></div><div class="param-line"><b>G</b><span>G₁ + G₂</span></div></div>
+      </div>
+      <div class="solution-row">
+        <div><div class="eyebrow">АНАЛИТИЧЕСКОЕ РЕШЕНИЕ · (1.17)</div><div class="solution-formula">C(t) = C₀e<sup>−t/T</sup> + Pᵢ(1 − e<sup>−t/T</sup>)</div><p>Здесь C₀ — начальная концентрация, Pᵢ — установившееся значение, t — время, T — постоянная времени.</p></div>
+        <div class="constraint-card"><span class="card-kicker">ОГРАНИЧЕНИЯ</span><strong>C<sub>min</sub> ≤ C(t) ≤ C<sub>max</sub></strong><strong>0 ≤ t ≤ T<sub>набл.</sub></strong><small>Концентрация должна оставаться в допустимом технологическом диапазоне.</small></div>
+      </div>
+      <div class="note-box"><span>i</span><p><b>Как учитывается скорость мешалки?</b> В исходном дифференциальном уравнении скорость вращения отдельно не указана. Поэтому в интерактивном стенде используется дополнительное инженерное допущение: эффективная постоянная времени уменьшается пропорционально скорости вращения и коэффициенту интенсивности. Базовое значение T = V/G при этом сохраняется и показывается отдельно.</p></div>
+    </section>
+
+    <section class="section simulator-section" id="simulator">
+      <div class="section-heading"><div><div class="eyebrow">04 / ВЫЧИСЛИТЕЛЬНЫЙ ЭКСПЕРИМЕНТ</div><h2>Настройте <em>свой режим</em></h2></div><p>Измените параметры установки. Результаты и графики пересчитываются автоматически.</p></div>
+      <div class="sim-layout">
+        <div class="control-panel">
+          <div class="panel-top"><span>ПАРАМЕТРЫ УСТАНОВКИ</span><button class="reset-btn" id="resetBtn">↺ Сбросить</button></div>
+          <div class="control-group"><div class="control-label"><label for="volume">Объём смеси, V</label><output id="volumeOut">10 л</output></div><input id="volume" type="range" min="5" max="100" step="1" value="10"><div class="range-ends"><span>5 л</span><span>100 л</span></div></div>
+          <div class="control-group"><div class="control-label"><label for="speed">Скорость вращения, n</label><output id="speedOut">300 об/мин</output></div><input id="speed" type="range" min="100" max="500" step="10" value="300"><div class="range-ends"><span>100</span><span>500 об/мин</span></div></div>
+          <div class="control-group"><div class="control-label"><label for="duration">Время смешивания, t</label><output id="durationOut">8 мин</output></div><input id="duration" type="range" min="1" max="20" step="0.5" value="8"><div class="range-ends"><span>1 мин</span><span>20 мин</span></div></div>
+          <div class="control-group"><div class="control-label"><label for="intensity">Интенсивность, k</label><output id="intensityOut">1.0</output></div><input id="intensity" type="range" min="0.5" max="2" step="0.1" value="1"><div class="range-ends"><span>0.5</span><span>2.0</span></div></div>
+          <div class="control-divider"></div>
+          <div class="subheading">СОСТАВ И ПОТОКИ</div>
+          <div class="two-inputs"><div><label for="g1">Расход смолы G₁, л/мин</label><input id="g1" type="number" min="0.1" max="20" step="0.1" value="2"></div><div><label for="g2">Расход растворителя G₂</label><input id="g2" type="number" min="0.1" max="20" step="0.1" value="1"></div></div>
+          <div class="two-inputs"><div><label for="c1">Концентрация C₁, %</label><input id="c1" type="number" min="0" max="100" step="0.1" value="5"></div><div><label for="c2">Концентрация C₂, %</label><input id="c2" type="number" min="0" max="100" step="0.1" value="100"></div></div>
+          <div class="two-inputs"><div><label for="c0">Начальная C₀, %</label><input id="c0" type="number" min="0" max="100" step="0.1" value="10"></div><div><label for="target">Целевая однородность, %</label><input id="target" type="number" min="50" max="99" step="1" value="90"></div></div>
+          <button class="btn btn-primary calculate-btn" id="calculateBtn">Рассчитать режим <span>→</span></button>
+          <div class="error-message" id="errorMessage" role="alert"></div>
+        </div>
+        <div class="results-panel">
+          <div class="metrics-grid">
+            <div class="metric-card"><span>ОДНОРОДНОСТЬ</span><strong id="homogeneity">90.9<small>%</small></strong><i>Расчётная степень</i></div>
+            <div class="metric-card"><span>КОНЦЕНТРАЦИЯ C(t)</span><strong id="concentration">20.0<small>%</small></strong><i>На выходе процесса</i></div>
+            <div class="metric-card"><span>ПОСТОЯННАЯ Tэфф</span><strong id="tau">3.33<small> мин</small></strong><i>С учётом режима</i></div>
+            <div class="metric-card"><span>УСЛОВНЫЕ ЗАТРАТЫ</span><strong id="energy">8.00</strong><i>Относительные ед.</i></div>
+          </div>
+          <div class="chart-card"><div class="chart-heading"><div><span class="card-kicker">ДИНАМИКА ПРОЦЕССА</span><h3>Однородность во времени</h3></div><span class="chart-unit">%</span></div><div class="chart-wrap"><canvas id="timeChart"></canvas></div></div>
+          <div class="chart-card"><div class="chart-heading"><div><span class="card-kicker">ВЛИЯНИЕ ОБОРОТОВ</span><h3>Однородность от скорости</h3></div><span class="chart-unit">%</span></div><div class="chart-wrap"><canvas id="speedChart"></canvas></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section optimization-section" id="optimization">
+      <div class="section-heading"><div><div class="eyebrow">05 / ОПТИМИЗАЦИЯ</div><h2>Найти баланс <em>качества и затрат</em></h2></div><p>Алгоритм перебирает допустимые скорости и рассчитывает минимальное время, необходимое для достижения заданной однородности.</p></div>
+      <div class="optimization-card">
+        <div class="optimization-copy"><span class="card-kicker">КРИТЕРИЙ ОПТИМИЗАЦИИ</span><div class="opt-formula">E = V · (n / 300)² · t</div><p>Минимизируются условные энергозатраты при ограничениях: 100 ≤ n ≤ 500 об/мин, 1 ≤ t ≤ 20 мин и H ≥ H<sub>зад.</sub></p><button class="btn btn-dark" id="optimizeBtn">Найти оптимальный режим <span>↗</span></button></div>
+        <div class="opt-result" id="optResult"><div class="opt-empty"><div class="target-icon">⌖</div><b>Оптимальный режим ещё не найден</b><span>Нажмите кнопку, чтобы запустить перебор параметров.</span></div></div>
+      </div>
+      <p class="method-note">Примечание: формула энергозатрат является условным сравнительным критерием для учебной оптимизации, а не измерением электрической мощности реального оборудования.</p>
+    </section>
+
+    <section class="section experiments-section" id="results">
+      <div class="section-heading"><div><div class="eyebrow">06 / РЕЗУЛЬТАТЫ И ВЫВОДЫ</div><h2>Сравнение <em>режимов работы</em></h2></div><p>Пять вычислительных экспериментов позволяют оценить влияние скорости и времени на однородность смеси.</p></div>
+      <div class="table-card"><div class="table-top"><div><span class="card-kicker">ТАБЛИЦА 01</span><h3>Экспериментальные режимы</h3></div><button class="export-btn" id="exportBtn">↓ Скачать CSV</button></div><div class="table-scroll"><table><thead><tr><th>№</th><th>Скорость, об/мин</th><th>Время, мин</th><th>Однородность, %</th><th>C(t), %</th><th>Затраты, ед.</th></tr></thead><tbody id="experimentTable"></tbody></table></div></div>
+      <div class="conclusion-grid"><article class="conclusion-card"><span class="card-kicker">ВЫВОД 01</span><h3>Время повышает однородность</h3><p>По мере увеличения продолжительности смешивания показатель однородности приближается к 100%, а концентрация — к установившемуся значению Pᵢ.</p></article><article class="conclusion-card"><span class="card-kicker">ВЫВОД 02</span><h3>Скорость ускоряет процесс</h3><p>При принятом инженерном допущении повышение скорости уменьшает эффективную постоянную времени, поэтому заданное качество достигается быстрее.</p></article><article class="conclusion-card"><span class="card-kicker">ВЫВОД 03</span><h3>Нужен рациональный режим</h3><p>Максимальная скорость не всегда экономически оправдана. Оптимизация помогает найти режим, который выполняет требование по качеству при меньших условных затратах.</p></article></div>
+      <div class="final-conclusion"><div class="final-mark">✓</div><div><span class="card-kicker">ОБЩЕЕ ЗАКЛЮЧЕНИЕ</span><p>Разработанное Web-приложение моделирует динамику концентрации ЛКМ, оценивает однородность смеси, строит графики, сравнивает экспериментальные режимы и выполняет поиск параметров с минимальными условными энергозатратами. Расчёт показывает, что качество процесса зависит от времени, скорости вращения и интенсивности перемешивания.</p></div></div>
+    </section>
+  </main>
+  <footer><a class="brand" href="#home"><span class="brand-mark">M</span><span>mix<span class="brand-light">lab</span></span></a><span>Лабораторная работа № 2 · Моделирование процесса приготовления ЛКМ</span><a href="#home">Наверх ↑</a></footer>
+  <script src="app.js"></script>
+</body>
+</html>
